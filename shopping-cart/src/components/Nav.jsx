@@ -3,9 +3,11 @@ import { Link } from "react-router";
 export function Nav() {
   return (
     <>
-      <Link to="/home">Home</Link>
+      <Link to="/">Home</Link>
       <div></div>
-      <Link to="Shopping">Shopping</Link>
+      <Link to="/Mall">Mall</Link>
+      <div></div>
+      <Link to="/Cart">Cart</Link>
     </>
   );
 }

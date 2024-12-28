@@ -4,6 +4,7 @@ function App() {
   return (
     <>
       <Nav />
+      <h1>Home</h1>
     </>
   );
 }

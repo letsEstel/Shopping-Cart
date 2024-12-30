@@ -10,6 +10,11 @@ export function Cart() {
   const toggleSpan = () => {
     setIsVisible((prev) => !prev); // Toggle the visibility state
   };
+  const deleteProduct = (title) => {
+    let newCart = cart;
+    newCart = newCart.filter((prod) => prod.title != title);
+    setCart(newCart);
+  };
   return (
     <>
       <Nav />
@@ -28,18 +33,25 @@ export function Cart() {
           : "Your cart is empty."}
       </p>
       {isVisible && (
-        <div>
-          {cart.map((prod, index) => {
+        <div className="cartContainer">
+          {cart.map((prod) => {
             return (
-              <div key={index}>
+              <div key={prod.title}>
                 <div className="productContainer">
                   <ProductDisplay
                     title={prod.title}
-                    price={prod.price}
+                    price={prod.price * prod.amount}
                     description={""}
                     image={prod.image}
                   ></ProductDisplay>
-                  <span>{prod.amount}</span>
+                  <div>{prod.amount}</div>
+                  <button
+                    onClick={() => {
+                      deleteProduct(prod.title);
+                    }}
+                  >
+                    Delete
+                  </button>
                 </div>
               </div>
             );

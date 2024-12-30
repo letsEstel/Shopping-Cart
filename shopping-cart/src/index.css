@@ -112,3 +112,9 @@ img {
   border-radius: 7px;
   padding: 7px;
 }
+
+.cartContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3em;
+}

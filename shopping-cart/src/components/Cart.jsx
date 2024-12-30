@@ -43,11 +43,13 @@ export function Cart() {
                 <div className="productContainer">
                   <ProductDisplay
                     title={prod.title}
-                    price={prod.price * prod.amount}
+                    price={(prod.price * prod.amount).toFixed(2)}
                     description={""}
                     image={prod.image}
                   ></ProductDisplay>
-                  <div>{prod.amount}</div>
+                  <div>
+                    <b>{prod.amount}</b>
+                  </div>
                   <button
                     onClick={() => {
                       deleteProduct(prod.title);

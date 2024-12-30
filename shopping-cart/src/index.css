@@ -91,6 +91,7 @@ body {
 
 img {
   width: 70px;
+  height: auto;
 }
 
 .productList {
@@ -117,4 +118,15 @@ img {
   display: flex;
   flex-wrap: wrap;
   gap: 3em;
+}
+
+/* General Link Styles */
+a {
+  text-decoration: none; /* Remove underline */
+  color: black; /* Default link color */
+  transition: color 0.3s ease; /* Smooth color change */
+}
+
+a:hover {
+  color: #0056b3; /* Darker blue on hover */
 }

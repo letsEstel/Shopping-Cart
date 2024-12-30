@@ -15,6 +15,9 @@ export function Cart() {
     newCart = newCart.filter((prod) => prod.title != title);
     setCart(newCart);
   };
+  const buyAll = () => {
+    setCart([]);
+  };
   return (
     <>
       <Nav />
@@ -56,6 +59,7 @@ export function Cart() {
               </div>
             );
           })}
+          <button onClick={buyAll}>一键清空</button>
         </div>
       )}
     </>

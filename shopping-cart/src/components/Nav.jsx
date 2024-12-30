@@ -4,7 +4,7 @@ export function Nav() {
     <header>
       <Link to="/">Home</Link>
       <Link to="/Mall">Mall</Link>
-      <Link to="/Cart">Cart</Link>
+      <Link to="/Mall/Cart">Cart</Link>
     </header>
   );
 }

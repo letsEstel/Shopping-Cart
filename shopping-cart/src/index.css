@@ -104,3 +104,11 @@ img {
   width: 30em;
   padding: 1em;
 }
+
+.cartStatusBar {
+  margin-top: 17px;
+  background-color: chartreuse;
+  border: solid black;
+  border-radius: 7px;
+  padding: 7px;
+}

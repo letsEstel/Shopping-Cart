@@ -1,8 +1,9 @@
 /* eslint-disable react/prop-types */
+//ProductDisplay.jsx
 export function ProductDisplay({ title, price, description, image }) {
   return (
     <>
-      <div className="productContainer">
+      <div>
         <h2>{title}</h2>
         <h3>{price}$</h3>
         <p>{description}</p>
@@ -10,8 +11,6 @@ export function ProductDisplay({ title, price, description, image }) {
           <img src={image} alt={`${title}`} />
         </div>
         <label htmlFor={`quantity-${title}`}>Quantity:</label>
-        <input type="number" min="1" />
-        <button>Buy</button>
       </div>
     </>
   );

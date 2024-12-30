@@ -10,9 +10,6 @@ export const router = createBrowserRouter([
   {
     path: "/mall",
     element: <Mall />,
-  },
-  {
-    path: "/Cart",
-    element: <Cart />,
+    children: [{ path: "Cart", element: <Cart /> }],
   },
 ]);

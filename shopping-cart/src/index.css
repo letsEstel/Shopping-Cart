@@ -72,8 +72,7 @@ header {
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
-  padding: 10px 20px;
+  justify-content: space-between;
   position: fixed;
   top: 0;
   font-size: x-large;
@@ -90,20 +89,35 @@ body {
 }
 
 img {
-  width: 70px;
-  height: auto;
+  height: 7em;
 }
 
+/* Product showing*/
 .productList {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 3em;
+  column-count: 3; /* Number of columns for large screens */
+  column-gap: 0.5em; /* Space between columns */
 }
+
 .productContainer {
+  break-inside: avoid; /* Prevent items from breaking between columns */
+  margin-bottom: 0.5em; /* Space between items */
   border: solid #213547;
   border-radius: 7px;
-  width: 30em;
   padding: 1em;
+  box-sizing: border-box;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .productList {
+    column-count: 2; /* Reduce columns for tablets */
+  }
+}
+
+@media (max-width: 600px) {
+  .productList {
+    column-count: 1; /* Single column for mobile devices */
+  }
 }
 
 .cartStatusBar {
@@ -128,5 +142,26 @@ a {
 }
 
 a:hover {
+  background-color: #f4a261;
+}
+
+/* Styling for the link container */
+.linkList {
+  display: flex; /* Align links horizontally */
+  gap: 1em; /* Add spacing between links */
+  flex-shrink: 0;
+  margin-right: 10px;
+}
+
+/* Styling for the links */
+.linkList a {
+  text-decoration: none; /* Remove underline */
+  color: #007bff; /* Blue color for links */
+  font-size: 1em; /* Standard font size */
+  transition: color 0.2s; /* Smooth hover effect */
+}
+
+/* Hover effect for links */
+.linkList a:hover {
   color: #0056b3; /* Darker blue on hover */
 }

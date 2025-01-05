@@ -68,21 +68,34 @@ button:focus-visible {
 } */
 
 /* A little try here*/
-header {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: fixed;
-  top: 0;
-  font-size: x-large;
-  background-color: white;
-  padding: 7px;
-  box-sizing: border-box;
+
+:root {
+  --header-height: 60px; /* Define the height of the header */
 }
+
 body {
-  padding-top: 60px;
+  margin: 0; /* Remove default margin */
+  padding-top: var(
+    --header-height
+  ); /* Add padding equal to the header height */
+  box-sizing: border-box; /* Consistent sizing */
 }
+
+header {
+  position: fixed; /* Make the header stick to the top */
+  top: 0;
+  left: 0;
+  width: 100%; /* Full width of the viewport */
+  height: var(--header-height); /* Use the same variable for header height */
+  background-color: white; /* Navbar background color */
+  z-index: 1000; /* Ensure it stays above other elements */
+  display: flex; /* Flexbox for aligning items */
+  align-items: center; /* Vertically center content */
+  justify-content: space-between; /* Space out nav items */
+  padding: 0 20px; /* Padding inside the navbar */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for better visibility */
+}
+
 #root {
   height: 100%;
   width: 100%;
@@ -150,7 +163,7 @@ a:hover {
   display: flex; /* Align links horizontally */
   gap: 1em; /* Add spacing between links */
   flex-shrink: 0;
-  margin-right: 10px;
+  margin-right: 34px;
 }
 
 /* Styling for the links */
